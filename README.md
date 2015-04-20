@@ -34,24 +34,24 @@ You will also need a php file.
 
 HTML:
 
-&lt;form method="post" action="" enctype="multipart/form-data"&gt;<br />
-	&lt;input type="file" name="the_file" required /&gt;<br />
-	&lt;input type="submit" /&gt;<br />
-&lt;/form&gt;
+	<form method="post" action="" enctype="multipart/form-data">
+		<input type="file" name="the_file" required />
+		<input type="submit" />
+	</form>
 
 JS:
 
-$("form").puploady({<br />
-	file        : 'upload.php',     //where you will manage data from the form (default: upload.php)<br />
-	callback    : false     //if you want a callback (default: false)<br />
-})<br />
+	$("form").puploady({
+		file        : 'upload.php',     //where you will manage data from the form (default: upload.php)
+		callback    : false     //if you want a callback (default: false)
+	})
 
 PHP (in upload.php):
 
-<?php<br />
-$the_dir = 'uploads/';<br />
-$the_file = $the_dir . basename($_FILES['the_file']['name']);<br />
-<br />
-if(move_uploaded_file($_FILES['the_file']['tmp_name'], $the_file)) {    echo "File uploaded";   } <br />
-else {  echo "Upload failed";   }<br />
-?>
+	<?php
+	$the_dir = 'uploads/';
+	$the_file = $the_dir . basename($_FILES['the_file']['name']);
+	
+	if(move_uploaded_file($_FILES['the_file']['tmp_name'], $the_file)) {    echo "File uploaded";   }
+	else {  echo "Upload failed";   }
+	?>
