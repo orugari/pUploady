@@ -1,5 +1,5 @@
 # pUploady
-jQuery asynchronous upload plugin
+A very light jQuery plugin to upload your files asynchronously with a progress bar.
 
 * Site: http://puploady.orugari.fr
 * Documentation:http://puploady.orugari.fr/documentation.php
