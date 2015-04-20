@@ -1,9 +1,11 @@
 
 {
-	"name": "pUploady",
+	"name": "puploady",
 	"version": "1.0.0",
+	"title": "pUploady",
+	"author": "orugari",
 	"description": "A very light jQuery plugin to upload your files asynchronously with a progress bar.",
-	"keywords": [ "upload", "jqury", "php", "progress bar" ],
+	"keywords": [ "upload", "jqury", "php", "progress", "bar" ],
 	"homepage": "http://puploady.orugari.fr",
 	"license": "MIT",
 	"ignore": [ ],
