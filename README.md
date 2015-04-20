@@ -1,12 +1,26 @@
 # pUploady
 jQuery asynchronous upload plugin
 
+* Site: http://puploady.orugari.fr
+* Documentation:http://puploady.orugari.fr/documentation.php
+* Minified version for production: http://puploady.orugari.fr/download.php
+
+## Credits
+
+* jQuery (http://jquery.com | (c) 2005, 2014 jQuery Foundation, Inc. and other contributors | MIT license)
+
+## License
+
+pUploady is released under the MIT license.
+
+Copyright (c) orugari
+
 ## Requirement
 HTML5 is necessary to use this plugin. Check also the minimum version for each browser.
 
 [Chrome 8.0] 	[Internet Explorer 10.0] 	[Firefox 16.0] 	[Safari 6.0] 	[Opera 11.0]
 
-# Installation
+## Installation
 
 Load jQuery then pUploady plugin in &lt;head&gt;&lt;/head&gt;.
 
@@ -18,14 +32,14 @@ You will also need a php file.
 
 ## Usage
 
-HTML :
+HTML:
 
 &lt;form method="post" action="" enctype="multipart/form-data"&gt;<br />
 	&lt;input type="file" name="the_file" required /&gt;<br />
 	&lt;input type="submit" /&gt;<br />
 &lt;/form&gt;
 
-JS :
+JS:
 
 $("form").puploady({<br />
 	file        : 'upload.php',     //where you will manage data from the form (default: upload.php)<br />
