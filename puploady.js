@@ -1,7 +1,7 @@
 /*
 	pUploady by orugari
 	http://puploady.orugari.fr
-	License: ttp://puploady.orugari.fr/license.php
+	License: http://puploady.orugari.fr/license.php
 */
 
 (function($) {
