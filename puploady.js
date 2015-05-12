@@ -1,7 +1,8 @@
 /*
 	pUploady by orugari
 	http://puploady.orugari.fr
-	License: http://puploady.orugari.fr/license.php
+	License: ttp://puploady.orugari.fr/license.php
+	v1.1.0
 */
 
 (function($) {
@@ -15,7 +16,7 @@
 
 $(this).on('submit', function(event){
 	event.preventDefault();
-	$(this).after('<div id="blackback"><progress id="thebar" value="0"></progress></div>');
+	$(this).after('<div id="blackback"><progress id="thebar" value="0"></progress> <span id="pup_cancel"><img src="images/cancel.png" alt="cancel" /></a></div>');
 	
 	var form = $(this);
     var formdata = false;
@@ -37,16 +38,21 @@ $(this).on('submit', function(event){
       "z-index": "100",
       "margin-top": "20%"
     });
+    $("#pup_cancel img").css({
+      "cursor": "pointer",
+      "vertical-align": "middle",
+      "padding-bottom": "2px"
+    });
     $('#blackback').fadeIn();
     
     if (window.FormData){
         formdata = new FormData(form[0]);
     }
-     $.ajax({
+     var theax = $.ajax({
             xhr: function() {
 			myXhr = $.ajaxSettings.xhr();
 			if(myXhr.upload){
-			myXhr.upload.addEventListener('progress',afficherAvancement, false);
+			myXhr.upload.addEventListener('progress',progressDisplay, false);
 			}
 			return myXhr;
 			},
@@ -67,18 +73,20 @@ $(this).on('submit', function(event){
 			}  
         }
     });
+    
+    $("#pup_cancel").click(function() {
+        theax.abort();
+        $('#blackback').fadeOut();
+        
+    })
      
-function afficherAvancement(e){
+function progressDisplay(e){
 	if(e.lengthComputable){
 		$('#thebar').attr({value:e.loaded,max:e.total});
 	}
 	}
 });
-            
-          
 
 }
 
 }(jQuery));
-
-
